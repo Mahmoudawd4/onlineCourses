@@ -1,0 +1,21 @@
+/* a{
+    font-size: 25px;
+    font-weight: bold;
+} */
+a:hover{
+    text-decoration: none;
+    color: #5fcf80 !important;
+}
+a{
+    margin-left: 15px;
+    font-size: 18px;
+ 
+}
+
+.button:hover{
+    color: aliceblue !important;
+}
+
+.test{
+    pointer-events: auto !important;
+}
