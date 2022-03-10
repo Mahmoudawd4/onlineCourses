@@ -19,7 +19,7 @@ export class CategoriesComponent implements OnInit {
   }
   p: number = 1;
   
-  url="http://localhost:8000/uploads/categores/"
+  url="https://short-online-courses.herokuapp.com/uploads/categores/"
 
   getAll(){
     this.categoryService.getcategories().subscribe(
