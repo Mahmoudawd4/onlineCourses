@@ -16,10 +16,12 @@ interface admin {
   providedIn: 'root',
 })
 export class AdminService {
+
+  url='http://short-online-courses.herokuapp.com/api/';
   constructor(private httpClient: HttpClient) {}
 
   Adminlogin(data: any): Observable<admin> {
-    return this.httpClient.post<admin>(environment.baseUrl + 'login', data);
+    return this.httpClient.post<admin>(this.url+'login', data);
   }
 
   Adminlogout() {
