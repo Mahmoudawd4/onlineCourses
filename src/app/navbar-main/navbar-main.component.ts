@@ -25,7 +25,7 @@ export class NavbarMainComponent implements OnInit {
   ngOnInit(): void {
     this.checktoken();
     if (localStorage.getItem('role') == 'isTrainer') this.checkUser = 'trainer';
-    else this.checkUser = 'student';
+    else if (localStorage.getItem('role') == 'isStudent') this.checkUser = 'student';
 // console.log(this.checkUser);
 
     this.studentService.studentloginservice.subscribe(
