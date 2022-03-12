@@ -50,7 +50,7 @@ export class ChatDialogComponent implements OnInit {
   }
 
   submit(): void {
-    this.http.post('http://localhost:8000/api/messages', {
+    this.http.post('https://short-online-courses.herokuapp.com/api/messages', {
       username: this.username,
       message: this.message
     }).subscribe(
