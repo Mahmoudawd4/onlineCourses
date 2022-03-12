@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let trainer of TrainersArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
-                    <td>{{trainer.id}}</td>
+                    <td>{{i}}</td>
                     <td class="py-1">
                       <img [src]="trainer.img" >
                     </td>

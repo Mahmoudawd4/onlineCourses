@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let question of QuetionExam.questions! | paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
-                    <td>{{question.id}}</td>
+                    <td>{{i}}</td>
                     <td>{{question.header}}</td>
                     <td>
                         <ul>

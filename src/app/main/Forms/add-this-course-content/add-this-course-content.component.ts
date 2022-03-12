@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
@@ -27,7 +27,8 @@ export class AddThisCourseContentComponent implements OnInit {
     constructor(
       private CourseContentService: CourseContentService,
       private courseService: CoursesService,
-      private activatedRoute:ActivatedRoute
+      private activatedRoute:ActivatedRoute ,
+      private router:Router
     ) {}
   
     ngOnInit(): void {
@@ -50,12 +51,19 @@ export class AddThisCourseContentComponent implements OnInit {
         (res) => {
           // this.coursesContentsArr = res;
           // console.log(res);
+          this.router.navigate([`/main/trainer/course/details/${this.id}`]);
+
         },
         (err) => {
           console.log('Error adding course content');
           console.log(err);
         }
+
+
       );
+
+
+      
     }
   
     onSubmit(form: NgForm) {

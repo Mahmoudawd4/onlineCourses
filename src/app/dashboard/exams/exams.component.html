@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let exam of ExamArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
-                    <td>{{exam.id}}</td>
+                    <td>{{i}}</td>
                     <td>{{exam.name}}</td>
                     <td>{{exam.max_score}}</td>
                     <td>{{exam.course?.name}}</td>

@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let feedback of feed | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
-                    <td>{{feedback.id}}</td>
+                    <td>{{i}}</td>
                     <td>{{feedback.student?.fname}} {{feedback.student?.lname}}</td>
                     <td>{{feedback.course?.name}}</td>
                     <td>{{feedback.desc}}</td>

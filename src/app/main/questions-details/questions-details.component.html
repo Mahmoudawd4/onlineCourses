@@ -2,7 +2,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2 class="my-2">" ### " Exam Questions</h2>
+        <h2 class="my-2"> Exam Questions</h2>
         <!-- <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio
           ipsam commodi, quisquam aliquam deleniti dolorem laboriosam sunt ratione
@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let question of QuetionExam.questions!| paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
-                    <td>{{question.id}}</td>
+                    <td>{{i}}</td>
                     <td>{{question.header}}</td>
                     <td>
                         <ul>
