@@ -15,7 +15,7 @@
         <div *ngFor="let course of coursesArray; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="course-item">
             <!-- <img src="assets/main/img/course-1.jpg" class="img-fluid" alt="..."> -->
-            <img [src]="url+course.c_img" class="img-fluid" alt="">
+            <img [src]="course.c_img" class="img-fluid" alt="">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4>{{course.c_name}}</h4>
@@ -27,7 +27,7 @@
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                   <!-- <img src="assets/main/img/trainers/trainer-1.jpg" class="img-fluid" alt=""> -->
-                  <img [src]="t_url+course.img" alt="" class="img-fluid">
+                  <img [src]="course.img" alt="" class="img-fluid">
                   <span>{{course.fname}}</span>
                 </div>
                 <div class="trainer-rank d-flex align-items-center">

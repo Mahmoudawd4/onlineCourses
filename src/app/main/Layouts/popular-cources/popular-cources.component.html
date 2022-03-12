@@ -12,7 +12,7 @@
       >
         <div class="course-item">
           <!-- <img src="assets/main/img/course-1.jpg" class="img-fluid" alt="..."> -->
-          <img [src]="url + course.img" class="img-fluid w-100 h-50" alt="" />
+          <img [src]="course.img" class="img-fluid w-100 h-50" alt="" />
 
           <div class="course-content">
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -32,7 +32,7 @@
               <div class="trainer-profile d-flex align-items-center">
                 <!-- <img src="assets/main/img/trainers/trainer-1.jpg" class="img-fluid" alt=""> -->
                 <img
-                  [src]="t_url + course.trainer?.img"
+                  [src]="course.trainer?.img"
                   alt=""
                   class="img-fluid rounded"
                 />

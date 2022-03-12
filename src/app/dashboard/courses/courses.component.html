@@ -24,7 +24,7 @@
                 <tr *ngFor="let course of Arr | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                   <td>{{course.id}}</td>
                   <td class="py-1">
-                    <img [src]= 'url+course.img'/>
+                    <img [src]= 'course.img'/>
                   </td>
                   <td>{{course.name}}</td>
                   <td>{{course.category?.name}}</td>
