@@ -134,7 +134,7 @@ const routes: Routes = [
           { path: 'exam/:examId', component: QuestionsDetailsComponent },
           { path: 'exam/:examId/add-question', component: AddThisQuestionComponent },
           { path: 'exam/:examId/update-question/:questionId', component: EditThisQuestionComponent },
-          { path: 'update', component: UpdateTrainerComponent },
+          { path: 'trainer/update', component: UpdateTrainerComponent },
           { path: 'logout', redirectTo:'main/login', pathMatch:'full'}
         ],
       },
