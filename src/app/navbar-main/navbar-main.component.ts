@@ -31,6 +31,7 @@ export class NavbarMainComponent implements OnInit {
     this.studentService.studentloginservice.subscribe(
       (next)=>{
         // console.log(next);
+        this.checkUser='student';
         this.userName=next.name;
       },
       (error)=>{
@@ -43,6 +44,7 @@ export class NavbarMainComponent implements OnInit {
     this.trainserService.trainerloginservice.subscribe(
       (next)=>{
         // console.log(next);
+        this.checkUser='trainer';
         this.userName=next.name;
       },
       (error)=>{
