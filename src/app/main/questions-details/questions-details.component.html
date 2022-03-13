@@ -23,7 +23,7 @@
             <button type="button" class="btn main-btns text-light btn-fw col-sm-12 mb-3" [routerLink]="'/main/trainer/exam/'+id+'/add-question'" > Add New Question </button>
 
             <div class="table-responsive">
-              <table class="table table-striped text-center">
+              <table class="table table-striped ">
                 <thead>
                   <tr >
                     <th> ID</th>
@@ -36,18 +36,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let question of QuetionExam.questions!| paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
-                    <td>{{i}}</td>
-                    <td>{{question.header}}</td>
+                  <tr class="text-wrap" *ngFor="let question of QuetionExam.questions!| paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
+                    <td>{{i+1}}</td>
+                    <td class="text-wrap">{{question.header}}</td>
                     <td>
-                        <ul>
+                        <ul class="text-wrap" >
                             <li>{{question.choice_1}}</li>
                             <li>{{question.choice_2}}</li>
                             <li>{{question.choice_3}}</li>
                             <li>{{question.choice_4}}</li>
                         </ul>
                     </td>
-                    <td>{{question.answer}}</td>
+                    <td class="text-wrap" >{{question.answer}}</td>
                     <td>{{question.score}}</td>
                     <td>
 <a class="h3 text-warning"  [routerLink]="'/main/trainer/exam/'+id+'/update-question/'+question.id"><i class="mdi mdi-tooltip-edit font-weight-medium"></i> </a>

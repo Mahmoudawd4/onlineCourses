@@ -31,6 +31,7 @@ export class LoginStudentComponent implements OnInit {
     this.data.password=form.value.password
 
     // console.log(this.data);
+//            routerLink="/main/home"
 
     this.studentService.checkStudent(this.data).subscribe(
       (res)=>{
@@ -41,15 +42,24 @@ export class LoginStudentComponent implements OnInit {
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
         localStorage.setItem('name',res.name);
+        localStorage.setItem('email',this.data.email);
+
+
        
  
       this.studentService.studentloginservice.emit(res)
+
+      this.router.navigate(['/main/home']);
 
 
       },
       (err) => {
         console.log('Error login');
         console.log(err);
+        alert('Error login');
+        this.router.navigate(['/main/login/student']);
+
+
       }
     )
 

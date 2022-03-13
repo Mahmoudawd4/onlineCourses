@@ -37,10 +37,10 @@
               <form  method="post" role="form" class="php-email-form" #contactForm=ngForm>
                 <div class="row">
                   <div class="col-md-6 form-group">
-                    <input  #contactNameInput=ngModel ngModel  minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$" type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    <input  #contactNameInput=ngModel ngModel  minlength="3" maxlength="20" pattern="^[a-zA-Z0-9 _.-]*$" type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                     <span *ngIf="contactNameInput.touched && contactNameInput.invalid && contactNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                     <span *ngIf="contactNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
-                    <span *ngIf="contactNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
+                    <span *ngIf="contactNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 20 characters *</span>
                     <span *ngIf="contactNameInput.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
                
                
@@ -64,10 +64,10 @@
 
 
                 <div class="form-group mt-3">
-                  <input type="text" #subNameInput=ngModel ngModel  minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$"  class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                  <input type="text" #subNameInput=ngModel ngModel  minlength="3" maxlength="50" pattern="^[a-zA-Z0-9 _.-]*$"  class="form-control" name="subject" id="subject" placeholder="Subject" required>
                   <span *ngIf="subNameInput.touched && subNameInput.invalid && subNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                   <span *ngIf="subNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
-                  <span *ngIf="subNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
+                  <span *ngIf="subNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 50 characters *</span>
                   <span *ngIf="subNameInput.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
                 </div>
 

@@ -135,6 +135,7 @@ export class PaymentComponent implements OnInit {
     this.price = this.coursedetails.price!;
     this.description = this.coursedetails.desc!;
     this.emaill=localStorage.getItem('name')!;
+    this.email=localStorage.getItem('email')!;
     return this.paymentIntentSub = this.payment.addPaymentIntentStripe(
       this.id,
       this.name,

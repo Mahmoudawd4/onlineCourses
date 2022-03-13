@@ -9,7 +9,7 @@
           <label >Name :</label>
           <input formControlName="catname"  type="text" minlength="3" maxlength="30" pattern="^[a-zA-Z0-9 ]*$" class="form-control" id="exampleInputName1" placeholder="Name" name="catname" />
           <div *ngIf="f['catname'].errors?.['minlength']" style="color: red;">name must be is atleast 3 char</div>
-          <div *ngIf="f['catname'].errors?.['maxlength']" style="color: red;">name must be is max 10 char</div>
+          <div *ngIf="f['catname'].errors?.['maxlength']" style="color: red;">name must be is max 30 char</div>
           <div *ngIf="f['catname'].errors?.['required']&&f['catname'].touched" style="color: red;">Name is required</div>
         </div>
 

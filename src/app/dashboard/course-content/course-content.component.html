@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let course of coursesContentsArr| paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
-                    <td>{{i}}</td>
+                    <td>{{i+1}}</td>
                     <td>{{course.name}}</td>
                     <td>{{course.content}}</td>
                     <td>

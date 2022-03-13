@@ -7,9 +7,9 @@
 
         <div class="form-group">
           <label >Name :</label>
-          <input formControlName="name" required minlength="3" maxlength="191" pattern="[A-Za-z ]+" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" />
+          <input formControlName="name" required minlength="3" maxlength="50" pattern="[A-Za-z ]+" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" />
           <div *ngIf="f['name'].errors?.['minlength']" style="color: red;">name must be is atleast 3 char</div>
-          <div *ngIf="f['name'].errors?.['maxlength']" style="color: red;">name must be is max 10 char</div>
+          <div *ngIf="f['name'].errors?.['maxlength']" style="color: red;">name must be is max 50 char</div>
           <div *ngIf="f['name'].errors?.['required']&&f['name'].touched" style="color: red;">Name is required</div>
 
 
@@ -74,7 +74,7 @@
 
 <div class="form-group">
 <label >description :</label>
-<input formControlName="desc" required  type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="desc" />
+<input formControlName="desc" required  type="text" class="form-control" id="exampleInputName1" placeholder="description" name="desc" />
 <div *ngIf="f['desc'].errors?.['required']&&f['desc'].touched" style="color: red;">description is required</div>
 </div>
 

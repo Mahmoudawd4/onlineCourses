@@ -7,7 +7,7 @@
             <div class="col-lg-3 col-md-4 mt-4" *ngFor="let category of catarray; let i=index">
               <div class="icon-box">
                 <i class="ri-file-list-3-line" style="color: #5fcf80;"></i>
-                <h3><a href="/main/categories/details/{{category.id}}">{{category.name}}</a></h3>
+                <h3><a routerLink="/main/categories/details/{{category.id}}">{{category.name}}</a></h3>
               </div>
             </div>
         

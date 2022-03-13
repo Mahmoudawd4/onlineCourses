@@ -30,6 +30,8 @@ export class TrainerLoginComponent implements OnInit {
     this.trainerService.checkTrainer(this.trainer).subscribe(
       (res) => {
         // console.log(res);
+        //          routerLink="/main/home"
+
         localStorage.setItem('Authorization', "bearer "+res.access_token);
         localStorage.setItem('id', res.id+"");
         sessionStorage.setItem('role',res.role);
@@ -39,10 +41,15 @@ export class TrainerLoginComponent implements OnInit {
         // this.router.navigate(['/main/home']);
         this.trainerService.trainerloginservice.emit(res)
 
+        this.router.navigate(['/main/home']);
+
       },
       (err) => {
         console.log('Error logging in Trainer');
         console.log(err);
+        alert('Error login');
+        this.router.navigate(['/main/trainer/login']);
+
         
       }
     );

@@ -27,7 +27,7 @@
                           ngModel
                           required
                           minlength="3"
-                          maxlength="191"
+                          maxlength="100"
                           pattern="^[a-zA-Z0-9 _.-]*$"
                           type="text"
                           class="form-control"
@@ -52,7 +52,7 @@
                           *ngIf="examNameInput.errors?.['maxlength']"
                           style="color: red"
                           class="alert"
-                          >Please enter less than 192 characters *</span
+                          >Please enter less than 100 characters *</span
                         >
                         <span
                           *ngIf="examNameInput.errors?.['pattern']"

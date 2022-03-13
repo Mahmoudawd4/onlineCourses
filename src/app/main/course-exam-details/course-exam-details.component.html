@@ -2,7 +2,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2 class="my-2">" ### " Course Exams</h2>
+        <h2 class="my-2"> Course Exams</h2>
       </div>
     </div>
     <!-- End Breadcrumbs -->
@@ -38,7 +38,7 @@
                     </thead>
                     <tbody>
                       <tr *ngFor="let exam of ExamArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
-                        <td>{{i}}</td>
+                        <td>{{i+1}}</td>
                         <td>{{exam.name}}</td>
                         <td>{{exam.max_score}}</td>
                         <!-- <td>{{exam.course?.name}}</td> -->

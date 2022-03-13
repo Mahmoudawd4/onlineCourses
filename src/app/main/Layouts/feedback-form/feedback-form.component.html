@@ -14,7 +14,7 @@
            
 
             <div class="form-group mt-5">
-              <textarea class="form-control" #subNameInput=ngModel ngModel minlength="3" pattern="^[a-zA-Z0-9 _.-]*$" maxlength="191" name="desc" rows="5" placeholder="desc" required></textarea>
+              <textarea class="form-control" #subNameInput=ngModel ngModel minlength="3" pattern="^[a-zA-Z0-9 _.-]*$" maxlength="200" name="desc" rows="5" placeholder="desc" required></textarea>
             
             </div>   <span *ngIf="subNameInput.touched && subNameInput.invalid && subNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
          

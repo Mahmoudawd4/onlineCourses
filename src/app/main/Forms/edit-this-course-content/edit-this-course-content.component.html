@@ -11,7 +11,7 @@
     </div>
   </div>
   <!-- End Breadcrumbs -->
-  <div class="container-fluid">
+  <div class="container">
     <div class="row mt-5">
       <div class="col-12 grid-margin stretch-card text-primary">
         <div class="card main-forms">
@@ -55,8 +55,8 @@
                   [ngModel]="this.courseContent.name"
                   required
                   minlength="3"
-                  maxlength="20"
-                  pattern="^[a-zA-Z0-9 _.-]*$"
+                  maxlength="100"
+                  pattern="^[a-zA-Z0-9 _.-?&]*$"
                   type="text"
                   class="form-control"
                   id="exampleInputName2"

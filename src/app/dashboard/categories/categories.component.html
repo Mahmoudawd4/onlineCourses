@@ -21,7 +21,7 @@
             <tbody>
             <tr *ngFor="let category of catarray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
 
-              <td>{{i}}</td>
+              <td>{{i+1}}</td>
               <td class="py-1">
                   <img [src]= 'category.img'/>
                 </td>
