@@ -108,6 +108,7 @@ export interface catCourse {
   price: number;
   trainer_id: number;
   twitter: string;
+  course_id:number;
 };
 
 // export catc;

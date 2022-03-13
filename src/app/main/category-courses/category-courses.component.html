@@ -21,8 +21,8 @@
                 <h4>{{course.c_name}}</h4>
                 <p class="price">${{course.price}}</p>
               </div>
-              <h3><a [routerLink]="'/main/courses/details/'+course.id">{{course.name}}</a></h3>
-              <p>{{course.desc}}</p>
+              <h3><a [routerLink]="'/main/courses/details/'+course.course_id">{{course.name}}</a></h3>
+              <p class="d-inline-block text-truncate" style="max-width: 300px;" >{{course.desc}}</p>
               <p>{{course.duration}} hour(s)</p>
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
