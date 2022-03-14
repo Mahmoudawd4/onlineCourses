@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Route } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import {
   ExamResultService,
@@ -20,7 +20,8 @@ export class ExamPageComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private question: QuestionService,
-    private examResult: ExamResultService
+    private examResult: ExamResultService,
+    private router:Router
   ) {}
   id!: number;
   examQuestion!: any;
@@ -71,7 +72,9 @@ export class ExamPageComponent implements OnInit {
     // console.log(this.result);
     this.examResult.addResult(this.result).subscribe(
       (res) => {
+        //[routerLink]="'/main/courses/details/'+id+'/videos/exam/result'"
         // console.log(res);
+        this.router.navigate([`/main/courses/details/${this.id}/videos/exam/result`]);
       },
       (err) => {
         console.log('Error adding course content');

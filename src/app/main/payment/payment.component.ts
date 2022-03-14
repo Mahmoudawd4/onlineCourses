@@ -79,7 +79,7 @@ export class PaymentComponent implements OnInit {
   name: string = 'powerbike';
   email: string = 'nelsob44@yahoo.com';
   price: number = 1200;
-  currency: string = 'gbp';
+  currency: string = 'EGP';
   description: string = 'A very good bike';
   private paymentIntentSub!: Subscription;
 

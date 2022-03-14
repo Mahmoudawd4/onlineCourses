@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
@@ -33,7 +33,8 @@ export class EditThisCourseContentComponent implements OnInit {
   constructor(
     private CourseContentService: CourseContentService,
     private activatedRoute: ActivatedRoute,
-    private courseService: CoursesService
+    private courseService: CoursesService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -86,7 +87,12 @@ export class EditThisCourseContentComponent implements OnInit {
     ).subscribe(
       (res) => {
         // console.log(res);
+                //                [routerLink]="'/main/trainer/course/details/'+id"
+
+        this.router.navigate([`/main/trainer/course/details/${this.id}`]);
+
         this.ngOnInit();
+
       },
       (err) => {
         console.log('Error updating course content');

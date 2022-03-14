@@ -6,6 +6,7 @@ import {
   NgForm,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Category } from 'src/app/_models/category.model';
 import { Course } from 'src/app/_models/course.model';
 import { Trainer } from 'src/app/_models/trainer.model';
@@ -24,7 +25,8 @@ export class AddThisCourseComponent implements OnInit {
     private courseService: CoursesService,
     private categoryService: CategororyService,
     private trainerService: TrainerService,
-    private formbuilder: FormBuilder
+    private formbuilder: FormBuilder,
+    private router:Router
   ) {}
 
   categories!: Category[];
@@ -48,6 +50,7 @@ export class AddThisCourseComponent implements OnInit {
       (res) => {
         this.categories = res.data;
         // console.log(this.categories);
+
       },
       (err) => {
         console.log('Error getting all categories');
@@ -136,7 +139,9 @@ export class AddThisCourseComponent implements OnInit {
     // console.log(this.data);
     this.courseService.create(formdata).subscribe(
       (res) => {
+        //routerLink="/main/trainer/courses"
         // console.log(res);
+        this.router.navigate(['/main/trainer/courses']);
       },
       (err) => {
         console.log('Error adding course');

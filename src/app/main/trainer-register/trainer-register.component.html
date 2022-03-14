@@ -20,6 +20,14 @@
               placeholder="First Name"
               name="fname"
             />
+
+            <span
+*ngIf="errorsArr['fname']"
+style="color: red"
+class="alert"
+>{{errorsArr['fname']}}</span
+> 
+
             <span
               *ngIf="firstNameInput.touched && firstNameInput.invalid && firstNameInput.errors?.['required']"
               style="color: red"
@@ -61,6 +69,13 @@
               placeholder="Last Name"
               name="lname"
             />
+
+            <span
+*ngIf="errorsArr['lname']"
+style="color: red"
+class="alert"
+>{{errorsArr['lname']}}</span
+> 
             <span
               *ngIf="lastNameInput.touched && lastNameInput.invalid && lastNameInput.errors?.['required']"
               style="color: red"
@@ -131,6 +146,9 @@
               >
                 Female
               </label>
+
+              
+
             </div>
           </div>
           <span
@@ -139,6 +157,14 @@
             class="alert"
             >This field is required *</span
           >
+
+          <span
+              *ngIf="errorsArr['gender']"
+              style="color: red"
+              class="alert"
+              >{{errorsArr['gender']}}</span
+              > 
+
         </fieldset>
 
         <div class="form-group">
@@ -159,6 +185,13 @@
             class="alert"
             >This field is required *</span
           >
+
+          <span
+              *ngIf="errorsArr['phone']"
+              style="color: red"
+              class="alert"
+              >{{errorsArr['phone']}}</span
+              > 
         </div>
 
         <div class="form-group">
@@ -179,6 +212,14 @@
             class="alert"
             >This field is required *</span
           >
+
+          <span
+              *ngIf="errorsArr['email']"
+              style="color: red"
+              class="alert"
+              >{{errorsArr['email']}}</span
+              > 
+
         </div>
 
         <div class="form-group">
@@ -199,6 +240,14 @@
             class="alert"
             >This field is required *</span
           >
+
+
+          <span
+              *ngIf="errorsArr['password']"
+              style="color: red"
+              class="alert"
+              >{{errorsArr['password']}}</span
+              > 
         </div>
         
        
@@ -210,7 +259,6 @@
           id="submitBtn"
           class="btn text-light mr-2 border-0 main-btns"
           [disabled]="!trainerRegisterForm.valid"
-          routerLink="/main/trainer/login"
           (click)="addTrainer(trainerRegisterForm)"
           
         >

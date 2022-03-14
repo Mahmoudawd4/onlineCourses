@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Trainer } from 'src/app/_models/trainer.model';
 import { TrainerService } from 'src/app/_services/trainer.service';
 
@@ -9,7 +10,8 @@ import { TrainerService } from 'src/app/_services/trainer.service';
   styleUrls: ['./trainer-register.component.css'],
 })
 export class TrainerRegisterComponent implements OnInit {
-  constructor(private trainerService: TrainerService) {}
+  errorsArr!: { [key: string]: any[] }; 
+  constructor(private trainerService: TrainerService ,private router:Router) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
@@ -36,10 +38,16 @@ export class TrainerRegisterComponent implements OnInit {
     this.trainerService.addTrainer(this.newTrainer).subscribe(
       (res) => {
         // console.log(res);
+        //          routerLink="/main/trainer/login"
+
+        this.router.navigate(['/main/trainer/login'])
+
       },
       (err) => {
         console.log('Error registering Trainer');
         console.log(err);
+        this.errorsArr=err.error.error; 
+
         
       }
     );

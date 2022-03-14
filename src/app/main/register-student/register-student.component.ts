@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Student } from 'src/app/_models/student.model';
 import { StudentService } from 'src/app/_services/student.service';
+
+
 
 @Component({
   selector: 'app-register-student',
@@ -10,8 +13,9 @@ import { StudentService } from 'src/app/_services/student.service';
 })
 export class RegisterStudentComponent implements OnInit {
 
-
-  constructor( private studentService: StudentService) { }
+  errorsArr!: { [key: string]: any[] }; 
+  
+  constructor( private studentService: StudentService ,private router:Router) { }
   ngOnInit(): void {
 
   }
@@ -42,15 +46,22 @@ export class RegisterStudentComponent implements OnInit {
     this.studentService.addStudent(this.newStudent).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        // console.log(res.data);
+        // console.log(res.data);        
+
+        this.router.navigate(['/main/login/student'])
+        
 
       },
       (err) => {
         console.log('Error adding student');
         console.log(err);
+        this.errorsArr=err.error.error; 
       }
     );
   }
+
+
+  //            routerLink="/main/login/student"
 
   onSubmit(form: NgForm) {
     // console.log(form);

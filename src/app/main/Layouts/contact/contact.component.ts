@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContactUsService } from 'src/app/_services/contact-us.service';
 import { Contactus } from 'src/app/_models/contactus.model';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private contactService: ContactUsService) { }
+  constructor(private contactService: ContactUsService , private router:Router) { }
   newcontact: Contactus={
    
     email:'',
@@ -21,6 +22,7 @@ export class ContactComponent implements OnInit {
   };
   recieved= false;
   ngOnInit(): void {
+    
   }
   addContact(form: NgForm) {
     this.newcontact.name = form.value['name'];
@@ -35,6 +37,10 @@ export class ContactComponent implements OnInit {
       (res) => {
         // this.coursesContentsArr = res;
         // console.log(res);
+        //routerLink="/main/home"
+
+        this.router.navigate(['/main/home']);
+
       },
       (err) => {
         console.log('Error adding contact');

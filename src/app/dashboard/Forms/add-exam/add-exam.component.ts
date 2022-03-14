@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { Exam } from 'src/app/_models/exam.model';
 import { CoursesService } from 'src/app/_services/courses.service';
@@ -13,7 +13,7 @@ import { ExamsService } from 'src/app/_services/exams.service';
 })
 export class AddExamComponent implements OnInit {
 
-  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute ,private CourseServices:CoursesService) { }
+  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute ,private CourseServices:CoursesService ,private router:Router) { }
   newexam: Exam={
     id: 0,
     course_id: 0,
@@ -44,6 +44,8 @@ export class AddExamComponent implements OnInit {
       (res) => {
         // this.coursesContentsArr = res;
         // console.log(res);
+        //routerLink="/dashboard/exams" ;
+        this.router.navigate(['/dashboard/exams']);
       },
       (err) => {
         console.log('Error adding course content');

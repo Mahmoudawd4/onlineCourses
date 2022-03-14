@@ -57,7 +57,7 @@
           <label for="exampleInputName1">Choice_1 :</label>
           <input
             #choice_1NameInput="ngModel"
-            ngModel
+            [(ngModel)]="choice_1"
             required
             minlength="1"
             maxlength="255"
@@ -91,7 +91,7 @@
           <label for="exampleInputName1">Choice_2 :</label>
           <input
             #choice_2NameInput="ngModel"
-            ngModel
+            [(ngModel)]="choice_2"
             required
             minlength="1"
             maxlength="255"
@@ -125,7 +125,7 @@
           <label for="exampleInputName1">Choice_3 :</label>
           <input
             #choice_3NameInput="ngModel"
-            ngModel
+            [(ngModel)]="choice_3"
             required
             minlength="1"
             maxlength="255"
@@ -159,7 +159,7 @@
           <label for="exampleInputName1">Choice_4 :</label>
           <input
             #choice_4NameInput="ngModel"
-            ngModel
+            [(ngModel)]="choice_4"
             required
             minlength="1"
             maxlength="255"
@@ -193,7 +193,7 @@
           <label for="exampleInputName1">Correct Answer is (write the answer) :</label>
           <input
             #answerNameInput="ngModel"
-            ngModel
+            [(ngModel)]="answer"
             required
             minlength="1"
             maxlength="255"
@@ -221,6 +221,14 @@
             class="alert"
             >Please enter less than 255 characters *</span
           >
+
+          <span
+*ngIf="((answer !== choice_1) && (answer !== choice_2) && (answer !== choice_3) && (answer !== choice_4))"
+style="color: red"
+class="alert"
+>Please enter a valid answer from your choices *</span
+> 
+
         </div>
 
         <div class="form-group">

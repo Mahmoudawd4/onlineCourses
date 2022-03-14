@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { Exam } from 'src/app/_models/exam.model';
 import { CoursesService } from 'src/app/_services/courses.service';
@@ -29,7 +29,7 @@ export class UpdateExamComponent implements OnInit {
   };
 
   constructor(   private examService: ExamsService,
-    private activatedRoute: ActivatedRoute,private CourseServices:CoursesService) { }
+    private activatedRoute: ActivatedRoute,private CourseServices:CoursesService ,private router:Router) { }
 
 
     ngOnInit(): void {
@@ -98,6 +98,9 @@ export class UpdateExamComponent implements OnInit {
         (res) => {
           // this.coursesContentsArr = res;
           // console.log(res);
+          //routerLink="/dashboard/exams"
+          this.router.navigate(['/dashboard/exams']);
+
           this.ngOnInit();
         },
         (err) => {

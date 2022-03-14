@@ -135,7 +135,6 @@
                 id="submitBtn"
                 class="btn text-light mr-2 main-btns"
                 [disabled]="!courseContentForm.valid"
-                [routerLink]="'/main/trainer/course/details/'+id"
                 (click)="
                   updateCourseContent(this.courseContent.id!, courseContentForm)
                 "

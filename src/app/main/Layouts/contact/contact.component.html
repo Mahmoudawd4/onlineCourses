@@ -50,7 +50,7 @@
 
 
                   <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email"  #contactEmailInput=ngModel ngModel  minlength="10" maxlength="191" class="form-control" name="email" id="email" placeholder="Your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <input type="email"  #contactEmailInput=ngModel ngModel   maxlength="191" class="form-control" name="email" id="email" placeholder="Your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                  
                     <span *ngIf="contactEmailInput.touched && contactEmailInput.invalid && contactEmailInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                     <span *ngIf="contactEmailInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 10 characters *</span>
@@ -91,11 +91,9 @@
                   <div class="sent-message" >Your message has been sent. Thank you!</div>
                 </div>
                 <div class="text-center">
-                  <button type="submit"  routerLink="/main/home" (click)="addContact(contactForm) "[disabled]="!contactForm.valid">Send Message</button></div>
+                  <button type="submit"   (click)="addContact(contactForm) "[disabled]="!contactForm.valid">Send Message</button></div>
               </form>
-  
             </div>
-  
           </div>
   
         </div>

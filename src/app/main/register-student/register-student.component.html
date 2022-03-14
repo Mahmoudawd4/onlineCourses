@@ -21,6 +21,8 @@
                 placeholder="First Name"
                 name="fname"
               />
+
+              
               <span
                 *ngIf="firstNameInput.touched && firstNameInput.invalid && firstNameInput.errors?.['required']"
                 style="color: red"
@@ -45,6 +47,14 @@
                 class="alert"
                 >Please enter alphabets characters only *</span
               >
+
+              <span
+*ngIf="errorsArr['fname']"
+style="color: red"
+class="alert"
+>{{errorsArr['fname']}}</span
+> 
+
             </div>
 
             <div class="col">
@@ -86,6 +96,14 @@
                 class="alert"
                 >Please enter alphabets characters only *</span
               >
+
+              <span
+*ngIf="errorsArr['lname']"
+style="color: red"
+class="alert"
+>{{errorsArr['lname']}}</span
+> 
+
             </div>
           </div>
 
@@ -134,6 +152,14 @@
                 >
                   Female
                 </label>
+
+                <span
+*ngIf="errorsArr['gender']"
+style="color: red"
+class="alert"
+>{{errorsArr['gender']}}</span
+> 
+
               </div>
             </div>
             <!-- <span
@@ -142,6 +168,16 @@
               class="alert"
               >This field is required *</span
             > -->
+
+            <span
+*ngIf="errorsArr['gender']"
+style="color: red"
+class="alert"
+>{{errorsArr['gender']}}</span
+> 
+
+
+            
           </fieldset>
 
           <div class="form-group">
@@ -156,7 +192,18 @@
               placeholder="Phone Number"
               name="phone"
             />
+
+            <span
+            *ngIf="errorsArr['phone']"
+            style="color: red"
+            class="alert"
+            >{{errorsArr['phone']}}</span
+            > 
+
           </div>
+
+
+
           <div class="form-group">
             <label for="email">Email :</label>
             <input
@@ -169,6 +216,15 @@
               placeholder="Email Address"
               name="email"
             />
+
+
+            <span
+            *ngIf="errorsArr['email']"
+            style="color: red"
+            class="alert"
+            >{{errorsArr['email']}}</span
+            > 
+
           </div>
           <div class="form-group">
             <label for="password"
@@ -184,6 +240,14 @@
               placeholder="placeholder"
               name="password"
             />
+
+            <span
+            *ngIf="errorsArr['password']"
+            style="color: red"
+            class="alert"
+            >{{errorsArr['password']}}</span
+            > 
+
           </div>
 
           <button
@@ -191,7 +255,6 @@
             id="submitBtn"
             class="btn text-light mr-2 border-0 main-btns"
             [disabled]="!studentForm.valid"
-            routerLink="/main/login/student"
             (click)="addStudent(studentForm)"
           >
             Register

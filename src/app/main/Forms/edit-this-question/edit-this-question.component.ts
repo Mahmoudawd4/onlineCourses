@@ -110,13 +110,14 @@ getQuestion(id: number) {
       (res) => {
         // console.log(res);
         this.ngOnInit();
+        this.router.navigate([`/main/trainer/exam/${this.exam_id}`]);
+
       },
       (err) => {
         console.log('Error updating Qestion ');
         console.log(err);
       }
     );
-    this.router.navigate([`/main/trainer/exam/${this.exam_id}`]);
 
   }
 

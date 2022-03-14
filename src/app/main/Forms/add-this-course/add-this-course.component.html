@@ -33,6 +33,14 @@
                   placeholder="Name"
                   name="name"
                 />
+
+                <div *ngIf="f['name'].errors?.['minlength']" style="color: red;">name must be is atleast 3 char</div>
+                <div *ngIf="f['name'].errors?.['maxlength']" style="color: red;">name must be is max 50 char</div>
+                <div *ngIf="f['name'].errors?.['required']&&f['name'].touched" style="color: red;">Name is required</div>
+      
+      
+
+                
               </div>
 
               <div class="form-group">
@@ -90,6 +98,9 @@
                     {{ category.name }}
                   </option>
                 </select>
+
+                <div *ngIf="f['category_id'].errors?.['required']&&f['category_id'].touched" style="color: red;">category is required</div>
+
               </div>
 
               <div class="form-group">
@@ -103,6 +114,9 @@
                   placeholder="Name"
                   name="price"
                 />
+
+                <div *ngIf="f['price'].errors?.['required']&&f['price'].touched" style="color: red;">price is required</div>
+
               </div>
 
               <div class="form-group">
@@ -114,6 +128,9 @@
                   class="form-control"
                   name="duration"
                 />
+
+                <div *ngIf="f['duration'].errors?.['required']&&f['duration'].touched" style="color: red;">duration is required</div>
+
               </div>
 
               <div class="form-group">
@@ -127,6 +144,9 @@
                   placeholder="Name"
                   name="preq"
                 />
+
+                <div *ngIf="f['preq'].errors?.['required']&&f['preq'].touched" style="color: red;">preq is required</div>
+
               </div>
 
               <div class="form-group">
@@ -140,13 +160,16 @@
                   placeholder="Name"
                   name="desc"
                 />
+
+                <div *ngIf="f['desc'].errors?.['required']&&f['desc'].touched" style="color: red;">description is required</div>
+
               </div>
 
               <button
               id="submitBtn"
                 type="submit"
                 class="btn text-light  main-btns mr-2"
-                routerLink="/main/trainer/courses"
+                
                 (click)="onsubmit(form)"
               >
                 Submit

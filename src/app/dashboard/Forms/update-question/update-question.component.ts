@@ -108,6 +108,7 @@ getQuestion(id: number) {
     this.QuestionService.editQestion(id,this.updatedQuestion).subscribe(
       (res) => {
         // console.log(res);
+        this.router.navigate([`/dashboard/questions/${this.exam_id}`]);
         this.ngOnInit();
       },
       (err) => {
@@ -115,7 +116,6 @@ getQuestion(id: number) {
         console.log(err);
       }
     );
-    this.router.navigate([`/dashboard/questions/${this.exam_id}`]);
 
   }
 

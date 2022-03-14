@@ -26,6 +26,12 @@ export class AddThisQuestionComponent implements OnInit {
     exam_id:0,
 };
 
+choice_1:string="";
+choice_2:string="";
+choice_3:string="";
+choice_4:string="";
+answer:string=""; 
+
   constructor(private QuestionService: QuestionService ,private router: Router ,private Examservices:ExamsService ,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -72,6 +78,8 @@ export class AddThisQuestionComponent implements OnInit {
         // console.log(res);
         // console.log(res.data);
         // console.log(form.value.exam_id);
+        this.router.navigate([`/main/trainer/exam/${this.exam_id}`]);
+
 
       },
       (err) => {
@@ -80,7 +88,6 @@ export class AddThisQuestionComponent implements OnInit {
       }
     );
 
-    this.router.navigate([`/main/trainer/exam/${this.exam_id}`]);
 
   }
 
