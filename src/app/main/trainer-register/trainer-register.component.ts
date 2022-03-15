@@ -11,9 +11,10 @@ import { TrainerService } from 'src/app/_services/trainer.service';
 })
 export class TrainerRegisterComponent implements OnInit {
   errorsArr!: { [key: string]: any[] }; 
+
   constructor(private trainerService: TrainerService ,private router:Router) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
   trainersArray!: Trainer[];
 
@@ -39,7 +40,6 @@ export class TrainerRegisterComponent implements OnInit {
       (res) => {
         // console.log(res);
         //          routerLink="/main/trainer/login"
-
         this.router.navigate(['/main/trainer/login'])
 
       },

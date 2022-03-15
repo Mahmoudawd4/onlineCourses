@@ -1,8 +1,8 @@
 <main id="main">
   <div class="container mt-5 grid-margin stretch-card text-primary">
-    <div class="card mt-5 main-forms" style="margin-top: 80px;">
+    <div class="card mt-5 main-forms" style="margin-top: 80px">
       <div class="card-body border">
-        <h4 class="card-title text-center  fw-bold">Sign Up</h4>
+        <h4 class="card-title text-center fw-bold">Sign Up</h4>
 
         <form class="forms-sample mt-3" #studentForm="ngForm">
           <div class="form-row">
@@ -22,7 +22,6 @@
                 name="fname"
               />
 
-              
               <span
                 *ngIf="firstNameInput.touched && firstNameInput.invalid && firstNameInput.errors?.['required']"
                 style="color: red"
@@ -49,12 +48,11 @@
               >
 
               <span
-*ngIf="errorsArr['fname']"
-style="color: red"
-class="alert"
->{{errorsArr['fname']}}</span
-> 
-
+                *ngIf="errorsArr['fname']"
+                style="color: red"
+                class="alert"
+                >{{ errorsArr["fname"] }}</span
+              >
             </div>
 
             <div class="col">
@@ -98,11 +96,11 @@ class="alert"
               >
 
               <span
-*ngIf="errorsArr['lname']"
-style="color: red"
-class="alert"
->{{errorsArr['lname']}}</span
-> 
+                *ngIf="errorsArr['lname']"
+                style="color: red"
+                class="alert"
+                >{{ errorsArr["lname"] }}</span
+              >
 
             </div>
           </div>
@@ -143,7 +141,6 @@ class="alert"
                   name="gender"
                   id="female"
                   value="female"
-                  
                 />
                 <label
                   class="form-check-label"
@@ -153,13 +150,7 @@ class="alert"
                   Female
                 </label>
 
-                <span
-*ngIf="errorsArr['gender']"
-style="color: red"
-class="alert"
->{{errorsArr['gender']}}</span
-> 
-
+                
               </div>
             </div>
             <!-- <span
@@ -170,14 +161,11 @@ class="alert"
             > -->
 
             <span
-*ngIf="errorsArr['gender']"
-style="color: red"
-class="alert"
->{{errorsArr['gender']}}</span
-> 
-
-
-            
+              *ngIf="errorsArr['gender']"
+              style="color: red"
+              class="alert"
+              >{{ errorsArr["gender"] }}</span
+            >
           </fieldset>
 
           <div class="form-group">
@@ -193,16 +181,10 @@ class="alert"
               name="phone"
             />
 
-            <span
-            *ngIf="errorsArr['phone']"
-            style="color: red"
-            class="alert"
-            >{{errorsArr['phone']}}</span
-            > 
-
+            <span *ngIf="errorsArr['phone']" style="color: red" class="alert">{{
+              errorsArr["phone"]
+            }}</span>
           </div>
-
-
 
           <div class="form-group">
             <label for="email">Email :</label>
@@ -217,19 +199,12 @@ class="alert"
               name="email"
             />
 
-
-            <span
-            *ngIf="errorsArr['email']"
-            style="color: red"
-            class="alert"
-            >{{errorsArr['email']}}</span
-            > 
-
+            <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
+              errorsArr["email"]
+            }}</span>
           </div>
           <div class="form-group">
-            <label for="password"
-              >Password :</label
-            >
+            <label for="password">Password :</label>
             <input
               #passInput="ngModel"
               ngModel
@@ -242,12 +217,11 @@ class="alert"
             />
 
             <span
-            *ngIf="errorsArr['password']"
-            style="color: red"
-            class="alert"
-            >{{errorsArr['password']}}</span
-            > 
-
+              *ngIf="errorsArr['password']"
+              style="color: red"
+              class="alert"
+              >{{ errorsArr["password"] }}</span
+            >
           </div>
 
           <button

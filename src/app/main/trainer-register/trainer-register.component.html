@@ -1,5 +1,5 @@
 <div class="container mt-5 grid-margin stretch-card text-primary">
-  <div class="card main-forms" style="margin-top: 80px;">
+  <div class="card main-forms" style="margin-top: 80px">
     <div class="card-body">
       <h4 class="card-title text-center fw-bold">Sign Up</h4>
 
@@ -21,12 +21,7 @@
               name="fname"
             />
 
-            <span
-*ngIf="errorsArr['fname']"
-style="color: red"
-class="alert"
->{{errorsArr['fname']}}</span
-> 
+           
 
             <span
               *ngIf="firstNameInput.touched && firstNameInput.invalid && firstNameInput.errors?.['required']"
@@ -52,6 +47,10 @@ class="alert"
               class="alert"
               >Please enter alphabets characters only *</span
             >
+
+            <span *ngIf="errorsArr['fname']" style="color: red" class="alert">{{
+              errorsArr["fname"]}}</span>
+
           </div>
 
           <div class="col">
@@ -70,12 +69,7 @@ class="alert"
               name="lname"
             />
 
-            <span
-*ngIf="errorsArr['lname']"
-style="color: red"
-class="alert"
->{{errorsArr['lname']}}</span
-> 
+         
             <span
               *ngIf="lastNameInput.touched && lastNameInput.invalid && lastNameInput.errors?.['required']"
               style="color: red"
@@ -100,6 +94,11 @@ class="alert"
               class="alert"
               >Please enter alphabets characters only *</span
             >
+
+            <span *ngIf="errorsArr['lname']" style="color: red" class="alert">{{
+              errorsArr["lname"]
+            }}</span>
+
           </div>
         </div>
         <fieldset class="row mt-3">
@@ -146,9 +145,6 @@ class="alert"
               >
                 Female
               </label>
-
-              
-
             </div>
           </div>
           <span
@@ -158,12 +154,10 @@ class="alert"
             >This field is required *</span
           >
 
-          <span
-              *ngIf="errorsArr['gender']"
-              style="color: red"
-              class="alert"
-              >{{errorsArr['gender']}}</span
-              > 
+          <span *ngIf="errorsArr['gender']" style="color: red" class="alert">{{
+            errorsArr["gender"]
+          }}</span>
+
 
         </fieldset>
 
@@ -186,12 +180,9 @@ class="alert"
             >This field is required *</span
           >
 
-          <span
-              *ngIf="errorsArr['phone']"
-              style="color: red"
-              class="alert"
-              >{{errorsArr['phone']}}</span
-              > 
+          <span *ngIf="errorsArr['phone']" style="color: red" class="alert">{{
+            errorsArr["phone"]
+          }}</span>
         </div>
 
         <div class="form-group">
@@ -213,12 +204,10 @@ class="alert"
             >This field is required *</span
           >
 
-          <span
-              *ngIf="errorsArr['email']"
-              style="color: red"
-              class="alert"
-              >{{errorsArr['email']}}</span
-              > 
+          <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
+            errorsArr["email"]
+          }}</span>
+
 
         </div>
 
@@ -234,6 +223,7 @@ class="alert"
             placeholder="Password"
             name="password"
           />
+
           <span
             *ngIf="passwordInput.touched && passwordInput.invalid && passwordInput.errors?.['required']"
             style="color: red"
@@ -241,18 +231,15 @@ class="alert"
             >This field is required *</span
           >
 
-
           <span
-              *ngIf="errorsArr['password']"
-              style="color: red"
-              class="alert"
-              >{{errorsArr['password']}}</span
-              > 
+            *ngIf="errorsArr['password']"
+            style="color: red"
+            class="alert"
+            >{{ errorsArr["password"] }}</span
+          >
+
+          
         </div>
-        
-       
-        
-        
 
         <button
           type="submit"
@@ -260,7 +247,6 @@ class="alert"
           class="btn text-light mr-2 border-0 main-btns"
           [disabled]="!trainerRegisterForm.valid"
           (click)="addTrainer(trainerRegisterForm)"
-          
         >
           Register
         </button>
