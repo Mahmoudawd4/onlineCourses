@@ -47,12 +47,12 @@
                 >Please enter alphabets characters only *</span
               >
 
-              <span
+              <!-- <span
                 *ngIf="errorsArr['fname']"
                 style="color: red"
                 class="alert"
                 >{{ errorsArr["fname"] }}</span
-              >
+              > -->
             </div>
 
             <div class="col">
@@ -95,12 +95,12 @@
                 >Please enter alphabets characters only *</span
               >
 
-              <span
+              <!-- <span
                 *ngIf="errorsArr['lname']"
                 style="color: red"
                 class="alert"
                 >{{ errorsArr["lname"] }}</span
-              >
+              > -->
 
             </div>
           </div>
@@ -160,12 +160,13 @@
               >This field is required *</span
             > -->
 
-            <span
+            <!-- <span
               *ngIf="errorsArr['gender']"
               style="color: red"
               class="alert"
               >{{ errorsArr["gender"] }}</span
-            >
+            > -->
+            
           </fieldset>
 
           <div class="form-group">
@@ -181,9 +182,10 @@
               name="phone"
             />
 
-            <span *ngIf="errorsArr['phone']" style="color: red" class="alert">{{
+            <!-- <span *ngIf="errorsArr['phone']" style="color: red" class="alert">{{
               errorsArr["phone"]
-            }}</span>
+            }}</span> -->
+
           </div>
 
           <div class="form-group">
@@ -199,9 +201,10 @@
               name="email"
             />
 
-            <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
+            <!-- <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
               errorsArr["email"]
-            }}</span>
+            }}</span> -->
+
           </div>
           <div class="form-group">
             <label for="password">Password :</label>
@@ -216,12 +219,12 @@
               name="password"
             />
 
-            <span
+            <!-- <span
               *ngIf="errorsArr['password']"
               style="color: red"
               class="alert"
               >{{ errorsArr["password"] }}</span
-            >
+            > -->
           </div>
 
           <button

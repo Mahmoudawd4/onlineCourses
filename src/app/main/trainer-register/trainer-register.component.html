@@ -48,8 +48,8 @@
               >Please enter alphabets characters only *</span
             >
 
-            <span *ngIf="errorsArr['fname']" style="color: red" class="alert">{{
-              errorsArr["fname"]}}</span>
+            <!-- <span *ngIf="errorsArr['fname']" style="color: red" class="alert">{{
+              errorsArr["fname"]}}</span> -->
 
           </div>
 
@@ -95,9 +95,9 @@
               >Please enter alphabets characters only *</span
             >
 
-            <span *ngIf="errorsArr['lname']" style="color: red" class="alert">{{
+            <!-- <span *ngIf="errorsArr['lname']" style="color: red" class="alert">{{
               errorsArr["lname"]
-            }}</span>
+            }}</span> -->
 
           </div>
         </div>
@@ -154,9 +154,9 @@
             >This field is required *</span
           >
 
-          <span *ngIf="errorsArr['gender']" style="color: red" class="alert">{{
+          <!-- <span *ngIf="errorsArr['gender']" style="color: red" class="alert">{{
             errorsArr["gender"]
-          }}</span>
+          }}</span> -->
 
 
         </fieldset>
@@ -180,9 +180,11 @@
             >This field is required *</span
           >
 
-          <span *ngIf="errorsArr['phone']" style="color: red" class="alert">{{
+          <!-- <span *ngIf="errorsArr['phone']" style="color: red" class="alert">{{
             errorsArr["phone"]
-          }}</span>
+          }}</span> -->
+
+
         </div>
 
         <div class="form-group">
@@ -204,9 +206,9 @@
             >This field is required *</span
           >
 
-          <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
+          <!-- <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
             errorsArr["email"]
-          }}</span>
+          }}</span> -->
 
 
         </div>
@@ -231,14 +233,14 @@
             >This field is required *</span
           >
 
-          <span
+          <!-- <span
             *ngIf="errorsArr['password']"
             style="color: red"
             class="alert"
             >{{ errorsArr["password"] }}</span
-          >
+          > -->
 
-          
+
         </div>
 
         <button
@@ -250,6 +252,8 @@
         >
           Register
         </button>
+
+
         <button class="btn btn-light" (click)="resetForm(trainerRegisterForm)">
           Cancel
         </button>

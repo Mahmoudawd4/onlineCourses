@@ -13,7 +13,7 @@ import { StudentService } from 'src/app/_services/student.service';
 })
 export class RegisterStudentComponent implements OnInit {
 
-  errorsArr!: { [key: string]: any[] }; 
+  // errorsArr!: { [key: string]: any[] }; 
   
   constructor( private studentService: StudentService ,private router:Router) { }
   ngOnInit(): void {
@@ -55,7 +55,7 @@ export class RegisterStudentComponent implements OnInit {
       (err) => {
         console.log('Error adding student');
         console.log(err);
-        this.errorsArr=err.error.error; 
+        // this.errorsArr=err.error.error; 
       }
     );
   }

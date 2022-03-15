@@ -10,7 +10,7 @@ import { TrainerService } from 'src/app/_services/trainer.service';
   styleUrls: ['./trainer-register.component.css'],
 })
 export class TrainerRegisterComponent implements OnInit {
-  errorsArr!: { [key: string]: any[] }; 
+  // errorsArr!: { [key: string]: any[] }; 
 
   constructor(private trainerService: TrainerService ,private router:Router) {}
   ngOnInit(): void {
@@ -46,7 +46,9 @@ export class TrainerRegisterComponent implements OnInit {
       (err) => {
         console.log('Error registering Trainer');
         console.log(err);
-        this.errorsArr=err.error.error; 
+        // this.errorsArr=err.error.error; 
+        //console.log(this.errorsArr);
+        
 
         
       }
