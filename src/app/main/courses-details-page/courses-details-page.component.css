@@ -1,3 +1,8 @@
 a:hover{
     text-decoration: none;
 }
+
+.get-started-btn{
+    cursor: pointer; 
+}
+
