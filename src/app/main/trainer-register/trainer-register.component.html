@@ -169,6 +169,7 @@
             required
             type="text"
             class="form-control"
+            minlength="10"
             id="phone"
             placeholder="Phone"
             name="phone"
@@ -180,9 +181,14 @@
             >This field is required *</span
           >
 
-          <!-- <span *ngIf="errorsArr['phone']" style="color: red" class="alert">{{
-            errorsArr["phone"]
-          }}</span> -->
+          <span
+*ngIf="phoneInput.errors?.['minlength']"
+style="color: red"
+class="alert"
+>Please enter more than 9 characters *</span
+> 
+
+         
 
 
         </div>
@@ -193,7 +199,8 @@
             #emailInput="ngModel"
             ngModel
             required
-            type="text"
+            type="email"
+pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" 
             class="form-control"
             id="email"
             placeholder="Email Address"
@@ -206,9 +213,14 @@
             >This field is required *</span
           >
 
-          <!-- <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
-            errorsArr["email"]
-          }}</span> -->
+          <span
+*ngIf="emailInput.errors?.['pattern']"
+style="color: red"
+class="alert"
+>This email is invalid *</span
+> 
+
+        
 
 
         </div>
@@ -220,6 +232,7 @@
             ngModel
             required
             type="password"
+            minlength="8" 
             class="form-control"
             id="password"
             placeholder="Password"
@@ -232,6 +245,14 @@
             class="alert"
             >This field is required *</span
           >
+
+          <span
+*ngIf="passwordInput.errors?.['minlength']"
+style="color: red"
+class="alert"
+>Please enter more than 7 characters *</span
+> 
+
 
           <!-- <span
             *ngIf="errorsArr['password']"

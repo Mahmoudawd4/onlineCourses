@@ -99,6 +99,8 @@ console.log(this.checkUser);
           localStorage.removeItem('id');
           localStorage.removeItem('role');
           localStorage.removeItem('name');
+          localStorage.removeItem('email');
+          localStorage.removeItem('exam_id');
 
           this.studentService.studentloginservice.emit("null")
           this.router.navigate(['/main/home'])

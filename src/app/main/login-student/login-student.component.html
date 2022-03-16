@@ -13,6 +13,7 @@
               ngModel
               required
               type="email"
+pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
               class="form-control"
               id="email"
               placeholder="Email"
@@ -24,6 +25,14 @@
               class="alert"
               >This field is required *</span
             >
+
+            <span
+*ngIf="studentEmailInput.errors?.['pattern']"
+style="color: red"
+class="alert"
+>This email is invalid *</span
+> 
+
           </div>
           <div class="form-group">
             <label for="password" 
@@ -36,6 +45,7 @@
               type="password"
               class="form-control"
               id="password"
+              minlength="8"
               placeholder="Password"
               name="password"
             />
@@ -45,6 +55,14 @@
               class="alert"
               >This field is required *</span
             >
+
+            <span
+*ngIf="studentPasswordInput.errors?.['minlength']"
+style="color: red"
+class="alert"
+>Please enter more than 7 characters *</span
+> 
+
           </div>
   
           <button

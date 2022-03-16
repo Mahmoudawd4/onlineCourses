@@ -153,12 +153,12 @@
                 
               </div>
             </div>
-            <!-- <span
+            <span
               *ngIf="genderInput.touched && genderInput.invalid && genderInput.errors?.['required']"
               style="color: red"
               class="alert"
               >This field is required *</span
-            > -->
+            >
 
             <!-- <span
               *ngIf="errorsArr['gender']"
@@ -176,6 +176,7 @@
               ngModel
               required
               type="text"
+              minlength="10"
               class="form-control"
               id="phone"
               placeholder="Phone Number"
@@ -186,6 +187,13 @@
               errorsArr["phone"]
             }}</span> -->
 
+            <span
+*ngIf="phoneContentInput.errors?.['minlength']"
+style="color: red"
+class="alert"
+>Please enter more than 9 characters *</span
+> 
+
           </div>
 
           <div class="form-group">
@@ -194,12 +202,28 @@
               #emailInput="ngModel"
               ngModel
               required
-              type="text"
+              type="email"
+pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" 
               class="form-control"
               id="email"
               placeholder="Email Address"
               name="email"
             />
+
+            <span
+            *ngIf="emailInput.touched && emailInput.invalid && emailInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+
+            <span
+*ngIf="emailInput.errors?.['pattern']"
+style="color: red"
+class="alert"
+>This email is invalid *</span
+>
+
 
             <!-- <span *ngIf="errorsArr['email']" style="color: red" class="alert">{{
               errorsArr["email"]
@@ -213,11 +237,28 @@
               ngModel
               required
               type="password"
+              minlength="8" 
               class="form-control"
               id="password"
               placeholder="placeholder"
               name="password"
             />
+
+            <span
+            *ngIf="passInput.touched && passInput.invalid && passInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+
+
+            <span
+*ngIf="passInput.errors?.['minlength']"
+style="color: red"
+class="alert"
+>Please enter more than 7 characters *</span
+> 
+
 
             <!-- <span
               *ngIf="errorsArr['password']"
