@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/_models/category.model';
 import { Course } from 'src/app/_models/course.model';
+import { CategororyService } from 'src/app/_services/categorory.service';
 import { CoursesService } from 'src/app/_services/courses.service';
 import { StudentService } from 'src/app/_services/student.service';
 import { TrainerService } from 'src/app/_services/trainer.service';
@@ -14,7 +16,7 @@ export class MyCoursesComponent implements OnInit {
   id: number = parseInt(localStorage.getItem('id')!);
   courseArray!: Course[];
   courseCount: number[] = [];
-
+  categoryArr:Category[]=[]; 
   p: number = 1;
 
   url = 'http://localhost:8000/uploads/courses/';
@@ -23,7 +25,8 @@ export class MyCoursesComponent implements OnInit {
   constructor(
     private trainserService: TrainerService,
     private studentService: StudentService,
-    private courseService: CoursesService
+    private courseService: CoursesService,
+    private categoryservice:CategororyService 
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +44,8 @@ export class MyCoursesComponent implements OnInit {
           this.courseArray = res.courses!;
           for (let i = 0; i < this.courseArray.length; i++) {
             this.getCountOfStudents(i, this.courseArray[i].id!);
+            this.getcategory(this.courseArray[i].category_id!,i); 
+
           }
         },
         (err) => {
@@ -55,6 +60,8 @@ export class MyCoursesComponent implements OnInit {
           this.courseArray = res.courses!;
           for (let i = 0; i < this.courseArray.length; i++) {
             this.getCountOfStudents(i, this.courseArray[i].id!);
+            this.getcategory(this.courseArray[i].category_id!,i); 
+
           }
         },
         (err) => {
@@ -63,6 +70,20 @@ export class MyCoursesComponent implements OnInit {
       );
     }
   }
+
+  getcategory(id: number,index:number) {
+    this.categoryservice.getCategorybyId(id).subscribe(
+    (res) => {
+    this.categoryArr[index] = res.data;
+    // console.log(this.cat);
+    
+    },
+    (err) => {
+    console.log('Error getting category');
+    }
+    );
+    } 
+
 
   getCountOfStudents(index: number, id: number) {
     this.courseService.getCountStudentsInCourse(id).subscribe((res) => {

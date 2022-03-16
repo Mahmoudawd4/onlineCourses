@@ -22,7 +22,7 @@
             <img [src]="course.img" class="img-fluid w-100 h-50" alt="">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4>{{course.category?.name}}</h4>
+                <h4>{{categoryArr[i].name}}</h4> 
                 <p class="price">EGP {{course.price}}</p>
               </div>
               <h3><a [routerLink]="'/main/courses/details/'+course.id">{{course.name}}</a></h3>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
@@ -59,6 +59,7 @@ coursedetails: Course={
     private courseService: CoursesService,
     private coursestudent:CourseStudentService,
     private question: QuestionService,
+    private router:Router
   ) {}
 
   studid:any;
@@ -95,8 +96,6 @@ id:number=0;
         localStorage.setItem('exam_id', this.examQuestion[0].exam_id);
         console.log(this.examQuestion[0].exam_id)
 
- 
-
       },
       (err) => {
         console.log('cant load data from exam question');
@@ -132,6 +131,18 @@ id:number=0;
       }
     )
   }
+
+  checkLoggedIn(){
+    if(this.studid != null){
+    this.router.navigate([`/main/payment/${this.coursedetails.id}`]);
+    }
+    else{
+    this.router.navigate([`/main/login`]);
+    }
+    } 
+
+
+
 
   }
   

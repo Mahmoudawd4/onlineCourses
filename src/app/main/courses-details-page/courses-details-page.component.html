@@ -46,12 +46,12 @@
            
               <div class="my-3 d-flex  align-items-center">
                 <a
-                  *ngIf="active == false && checkUser=='student'"
-                  class="get-started-btn"
-                  [routerLink]="'/main/payment/' + coursedetails.id"
+                *ngIf="active == false && checkUser=='student' "
+                class="get-started-btn main-btns text-light"
+                (click)="checkLoggedIn()"
                 >
-                  Enroll Now
-                </a>
+                Enroll Now
+                </a> 
 
                 <a
                   *ngIf="active == true && checkUser=='student'"

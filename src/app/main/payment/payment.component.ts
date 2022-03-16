@@ -167,7 +167,7 @@ export class PaymentComponent implements OnInit {
             }
           }
       }).then((res: { paymentIntent: { status: string; }; error: { message: any; }; }) => {
-        // console.log(res);
+        console.log(res);
         if(res.paymentIntent && res.paymentIntent.status === "succeeded") {
           alert('your payment was successful');
           this.enroll(this.coursedetails.id!);
@@ -198,7 +198,7 @@ enroll(course_id:number){
     this.courseStudentService.enroll(this.coursestud).subscribe(
       (res) => {
      
-        // console.log(res);
+        console.log(res);
       },
       (err) => {
         console.log('Error adding course content');
