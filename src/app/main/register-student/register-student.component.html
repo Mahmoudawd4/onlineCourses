@@ -177,6 +177,7 @@
               required
               type="text"
               minlength="10"
+              pattern="^(0|\+[0-9-]*)$" 
               class="form-control"
               id="phone"
               placeholder="Phone Number"
@@ -193,6 +194,14 @@ style="color: red"
 class="alert"
 >Please enter more than 9 characters *</span
 > 
+
+<span
+*ngIf="phoneContentInput.errors?.['pattern']"
+style="color: red"
+class="alert"
+>Please enter numbers only *</span
+> 
+
 
           </div>
 
