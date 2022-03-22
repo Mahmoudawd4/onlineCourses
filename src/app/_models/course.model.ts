@@ -1,5 +1,6 @@
 import { Category } from "./category.model"
 import { Exam } from "./exam.model"
+import { Student } from "./student.model"
 import { Trainer } from "./trainer.model"
 
 export interface Course{
@@ -15,5 +16,9 @@ export interface Course{
     preq?:string,
     desc ?:string,
     exams?:Exam[],
+    students?:Student[], 
 }
+
+
+
 

@@ -1,3 +1,20 @@
+ 
+ <main id="main" data-aos="fade-in">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+  <div class="container">
+  <h2 class="my-2">We're happy to hear your Feedback</h2>
+  <!-- <p>
+  Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia
+  id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam
+  aperiam consequatur laboriosam nemo harum praesentium.
+  </p> -->
+  </div>
+  </div>
+  <!-- End Breadcrumbs -->
+  <!-- <div class="container"> -->
+  
+
  <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
     
@@ -14,10 +31,10 @@
            
 
             <div class="form-group mt-5">
-              <textarea class="form-control" #subNameInput=ngModel ngModel minlength="3" pattern="^[a-zA-Z0-9 _.-]*$" maxlength="200" name="desc" rows="5" placeholder="desc" required></textarea>
-            
-            </div>   <span *ngIf="subNameInput.touched && subNameInput.invalid && subNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-         
+              <textarea class="form-control" #subNameInput=ngModel ngModel minlength="6" pattern="^[a-zA-Z0-9 _.-]*$" maxlength="191" name="desc" rows="5" placeholder="desc" required></textarea>
+              <span *ngIf="subNameInput.touched && subNameInput.invalid && subNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+              <span *ngIf="subNameInput.errors?.['minlength']" style="color: red;" class="alert" >Please enter more than 6 characters *</span>
+              </div> 
           
           
           

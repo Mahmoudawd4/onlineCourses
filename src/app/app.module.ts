@@ -118,6 +118,7 @@ import { EditThisExamComponent } from './main/Forms/edit-this-exam/edit-this-exa
 import { QuestionsDetailsComponent } from './main/questions-details/questions-details.component';
 import { AddThisQuestionComponent } from './main/Forms/add-this-question/add-this-question.component';
 import { EditThisQuestionComponent } from './main/Forms/edit-this-question/edit-this-question.component';
+import { StudentsInCourseComponent } from './main/students-in-course/students-in-course.component';
 
 
 
@@ -241,7 +242,8 @@ import { EditThisQuestionComponent } from './main/Forms/edit-this-question/edit-
            EditThisExamComponent,
            QuestionsDetailsComponent,
            AddThisQuestionComponent,
-           EditThisQuestionComponent
+           EditThisQuestionComponent,
+           StudentsInCourseComponent
     ],
   imports: [
     BrowserModule,

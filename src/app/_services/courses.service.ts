@@ -85,5 +85,14 @@ export class CoursesService {
     return this.httpClient.get<number>(`${environment.baseUrl}courses/count`);
   }
 
+  getStudentsInCourse(id:number):Observable<Course>
+{
+const token: string = localStorage.getItem('Authorization')!;
+const headers = new HttpHeaders({
+Authorization: token
+})
+return this.httpClient.get<Course>(`${environment.baseUrl}student/showStudent/${id}`,{headers});
+} 
+
 
 }

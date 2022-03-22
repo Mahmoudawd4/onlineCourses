@@ -66,6 +66,7 @@ import { EditThisExamComponent } from './main/Forms/edit-this-exam/edit-this-exa
 import { QuestionsDetailsComponent } from './main/questions-details/questions-details.component';
 import { AddThisQuestionComponent } from './main/Forms/add-this-question/add-this-question.component';
 import { EditThisQuestionComponent } from './main/Forms/edit-this-question/edit-this-question.component';
+import { StudentsInCourseComponent } from './main/students-in-course/students-in-course.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main/home', pathMatch: 'full' },
@@ -134,7 +135,8 @@ const routes: Routes = [
           { path: 'exam/:examId', component: QuestionsDetailsComponent },
           { path: 'exam/:examId/add-question', component: AddThisQuestionComponent },
           { path: 'exam/:examId/update-question/:questionId', component: EditThisQuestionComponent },
-          { path: 'logout', redirectTo:'main/login', pathMatch:'full'}
+          { path: 'logout', redirectTo:'main/login', pathMatch:'full'},
+          { path: 'course/details/:courseId/students', component: StudentsInCourseComponent }, 
         ],
       },
       { path: 'trainer/update', component: UpdateTrainerComponent },

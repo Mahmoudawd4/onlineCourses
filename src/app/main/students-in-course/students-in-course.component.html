@@ -1,0 +1,53 @@
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2 class="my-2">" {{ course.name }} " Course Students</h2>
+        <!-- <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio
+            ipsam commodi, quisquam aliquam deleniti dolorem laboriosam sunt ratione
+            nostrum officiis totam id vitae, ad dolorum similique voluptatibus
+            repellendus laborum.
+          </p> -->
+      </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-lg-12 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title text-center">Students Table</h4>
+  
+              <div class="table-responsive">
+                <table class="table table-striped text-center">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Image</th>
+                      <th>Student Name</th>
+                      <th>Email</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let student of StudentsArray | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+                      <td>{{ i+1 }}</td>
+                      <td class="py-1">
+                        <img [src]="student.img" />
+                      </td>
+                      <td>{{ student.fname }} {{ student.lname }}</td>
+                      <td>{{ student.email }}</td>
+  
+  
+                    </tr>
+                  </tbody>
+                </table>
+                <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
