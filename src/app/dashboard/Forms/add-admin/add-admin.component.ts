@@ -31,12 +31,13 @@ export class AddAdminComponent implements OnInit {
     this.adminService.addAdmin(this.admin).subscribe(
       (res) => {
         // console.log(res);
+        this.router.navigate(['/dashboard/admins']);
+
       },
       (err) => {
         console.log(err);
       }
     );
-    this.router.navigate(['/dashboard/admins']);
 
   }
 }

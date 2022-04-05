@@ -35,6 +35,8 @@ export class ChatDialogComponent implements OnInit {
 
     const channel = pusher.subscribe('chat');
     channel.bind('message', (data:any)=>{ 
+      const name=localStorage.getItem('name')
+      this.username=name! 
       this.messages.push(data);
       // if(data.message=="who are you ?"){
         // this.messages.push({message:this.reply,username:"admin"});
